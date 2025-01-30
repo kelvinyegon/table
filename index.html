@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Generator</title>
+    </head>
+<body>
+    git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/kelvinyegon/table.git
+git push -u origin main
+    <div class="container">
+        <h2>Grade Generator</h2>
+        <input type="number" id="marks" placeholder="Enter your marks" min="0" max="100">
+        <button onclick="generateGrade()">Get Grade</button>
+        <p id="grade"></p>
+    </div>
+
+    <script>
+        function generateGrade() {
+            let marks = document.getElementById("marks").value;
+            marks = parseFloat(marks);
+            let grade;
+
+            
+            if (isNaN(marks) || marks < 0 || marks > 100) {
+                document.getElementById("grade").innerHTML = `<span class="error">Please enter a valid number between 0 and 100.</span>`;
+                return;
+            }
+
+            
+            if (marks >= 79) grade = "A";
+            else if (marks >= 60) grade = "B";
+            else if (marks >= 49) grade = "C";
+            else if (marks >= 40) grade = "D";
+            else grade = "E";
+
+            
+            document.getElementById("grade").innerHTML = `Your grade is: <strong>${grade}</strong>`;
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
